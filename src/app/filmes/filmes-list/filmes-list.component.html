@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="content">
+        <div class="add-bar">
+            <input type="text" name="filmeName" [(ngModel)]="filme.name">
+            <button [hidden]="add" (click)="addFilme()">add filme</button>
+            <button [hidden]="edit" (click)="updateFilme()">Update Filme</button>
+        </div>
+        <table id="filmes" class="table-filmes">
+            <tr>
+                <th>S/N</th>
+                <th>Name</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor="let filme of filmes" >
+                <td>{{filme.id}}</td>
+                <td>{{filme.name}}</td>
+                <td><button class="Up-btn" (click)="setFilmeEdit(filme)">Update</button></td>
+                <td><button class="Del-btn" (click)="removeFilme(filme)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
